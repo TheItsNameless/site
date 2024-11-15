@@ -1,0 +1,46 @@
+name: Deploy Quartz Site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@v4
+        with:
+          path: content-repo
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Clone Quartz
+        run: |
+          git clone https://github.com/jackyzha0/quartz.git
+          cd quartz
+          npm install
+          
+      - name: Copy content
+        run: |
+          rm -rf quartz/content
+          cp -r content-repo/* quartz/content/
+
+      - name: Build site
+        run: |
+          cd quartz
+          npm run build
+
+      - name: Push to publish branch
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          cd quartz/public
+          git init
+          git add -A
+          git commit -m "Deploy built site"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:publish
