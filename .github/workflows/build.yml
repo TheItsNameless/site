@@ -34,7 +34,7 @@ jobs:
       - name: Build site
         run: |
           cd quartz
-          npm run build
+          npx quartz create
 
       - name: Push to publish branch
         run: |
