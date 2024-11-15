@@ -27,7 +27,8 @@ jobs:
           
       - name: Copy content
         run: |
-          rm -rf quartz/content
+          rm -rf quartz/content/
+          mkdir -p quartz/content/
           cp -r content-repo/* quartz/content/
 
       - name: Build site
