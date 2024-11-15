@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "ItsNameless Wissenssammlung",
+    pageTitle: "ItsKnowledge",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -19,7 +19,7 @@ const config: QuartzConfig = {
     baseUrl: "itsnameless.de",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
-    generateSocialImages: false,
+    generateSocialImages: true,
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
@@ -88,6 +88,7 @@ const config: QuartzConfig = {
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.NotFoundPage(),
+      Plugin.HardLineBreaks(),
     ],
   },
 }
