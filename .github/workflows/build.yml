@@ -31,7 +31,7 @@ jobs:
         run: |
           rm -rf quartz/content/
           mkdir -p quartz/content/
-          cp -r content-repo/* quartz/content/
+          cp -r content-repo/content/* quartz/content/
 
       - name: Copy config
         run: |
