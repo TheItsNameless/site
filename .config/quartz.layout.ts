@@ -14,9 +14,9 @@ export const sharedPageComponents: SharedLayout = {
         // from data-repo-id
         repoId: 'R_kgDONPwxpQ',
         // from data-category
-        category: 'Announcements',
+        category: 'itsnameless.de',
         // from data-category-id
-        categoryId: 'DIC_kwDONPwxpc4CkTf_',
+        categoryId: 'DIC_kwDONPwxpc4CkVLS',
         // other attributes
         inputPosition: 'top',
         theme: 'noborder_dark',
