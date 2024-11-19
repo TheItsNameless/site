@@ -6,30 +6,32 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [
-    Component.Comments({
-      provider: 'giscus',
-      options: {
-        // from data-repo
-        repo: 'theitsnameless/site',
-        // from data-repo-id
-        repoId: 'R_kgDONPwxpQ',
-        // from data-category
-        category: 'itsnameless.de',
-        // from data-category-id
-        categoryId: 'DIC_kwDONPwxpc4CkVLS',
-        // other attributes
-        inputPosition: 'top',
-        theme: 'noborder_dark',
-        reactionsEnabled: true,
-        mapping: 'pathname',
-      }
-    }),
+    // Component.Comments({
+    //   provider: 'giscus',
+    //   options: {
+    //     // from data-repo
+    //     repo: 'theitsnameless/site',
+    //     // from data-repo-id
+    //     repoId: 'R_kgDONPwxpQ',
+    //     // from data-category
+    //     category: 'itsnameless.de',
+    //     // from data-category-id
+    //     categoryId: 'DIC_kwDONPwxpc4CkVLS',
+    //     // other attributes
+    //     inputPosition: 'top',
+    //     theme: 'noborder_dark',
+    //     reactionsEnabled: true,
+    //     mapping: 'pathname',
+    //   }
+    // }),
   ],
   footer: Component.Footer({
     links: {
-      "View me on GitHub": "https://github.com/theitsnameless",
-      "Visit me on Reddit": "https://www.reddit.com/user/ItsNameless8676/",
-      // "See me at": "",
+      "Impressum": "/Impressum",
+      "Datenschutz": "/Datenschutz",
+      "Kontakt": "/Kontakt",
+      "GitHub": "https://github.com/theitsnameless",
+      "Reddit": "https://www.reddit.com/user/ItsNameless8676/",
     },
   }),
 }
@@ -47,7 +49,12 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      filterFn: (node) => {
+        return node.file?.frontmatter?.tags?.includes("hidden") !== true
+      }
+    }
+    )),
   ],
   right: [
     Component.Graph(),
@@ -64,7 +71,12 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      filterFn: (node) => {
+        return node.file?.frontmatter?.tags?.includes("hidden") !== true
+      }
+    }
+    )),
   ],
   right: [],
 }
