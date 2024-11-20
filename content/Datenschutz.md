@@ -1,6 +1,7 @@
 ---
-title: Impressum und Datenschutz
-tags: hidden
+title: Datenschutz
+tags:
+  - hidden
 ---
 
 # Datenschutzerklärung

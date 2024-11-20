@@ -49,6 +49,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
+    Component.RecentNotes({title: "Aktuelles", showTags: false}),
     Component.DesktopOnly(Component.Explorer({
       filterFn: (node) => {
         return node.file?.frontmatter?.tags?.includes("hidden") !== true
