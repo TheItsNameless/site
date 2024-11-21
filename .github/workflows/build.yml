@@ -35,9 +35,7 @@ jobs:
 
       - name: Copy config
         run: |
-          rm quartz/quartz.config.ts
-          rm quartz/quartz.layout.ts
-          cp content-repo/.config/* quartz/
+          cp -r content-repo/.config/* quartz/
 
       - name: Build site
         run: |
