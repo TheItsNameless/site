@@ -30,6 +30,8 @@ export const sharedPageComponents: SharedLayout = {
       "Impressum": "/Impressum",
       "Datenschutz": "/Datenschutz",
       "Kontakt": "/Kontakt",
+      "Lizenz": "/Lizenz",
+      "Quellcode": "https://github.com/theitsnameless/site",
       "GitHub": "https://github.com/theitsnameless",
       "Reddit": "https://www.reddit.com/user/ItsNameless8676/",
     },
@@ -49,7 +51,9 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.RecentNotes({title: "Aktuelles", showTags: false}),
+    Component.RecentNotes({title: "Aktuelles", showTags: false, filter: (data) => {
+      return data.frontmatter?.tags?.includes("hidden") !== true
+    }}),
     Component.DesktopOnly(Component.Explorer({
       filterFn: (node) => {
         return node.file?.frontmatter?.tags?.includes("hidden") !== true

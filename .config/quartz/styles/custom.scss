@@ -1,0 +1,13 @@
+@use "./base.scss";
+
+// put your custom CSS here!
+img {
+    max-width: 100%;
+    border-radius: 30px;
+    margin: 1rem 0;
+  }
+
+p:has(> img) {
+  display: flex;
+  justify-content: center;
+}

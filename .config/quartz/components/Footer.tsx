@@ -14,7 +14,8 @@ export default ((opts?: Options) => {
     return (
       <footer class={`${displayClass ?? ""}`}>
         <p>
-          © {year} ItsNameless | {i18n(cfg.locale).components.footer.createdWith}{" "}
+          © {year} ItsNameless <a href="/Lizenz">CC BY-NC-ND 4.0</a> |{" "}
+          {i18n(cfg.locale).components.footer.createdWith}{" "}
           <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year}
         </p>
         <ul>
