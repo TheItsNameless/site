@@ -3,6 +3,14 @@ title: ItsNameless - Jetzt als Blog!
 tags:
   - Vorstellung
 ---
+# Aktuelles
+
+*Neues aus der Welt von ItsNameless!*
+
+[Blog aufsetzen leicht gemacht](<Blog aufsetzen leicht gemacht>)
+
+# Vorstellung
+
 ![[avatar shirt green.png|300]]
 
 **Hey, schön, dass du hier bist!**  
