@@ -41,34 +41,47 @@ Ich habe nun aber einen eigenen Server. Und das Prinzip, das gesamte Quartz-Repo
 Das Prinzip, immer das gesamte Quartz-Repository zu Clonen führt zu ziemlich viel Bloat, wenn man einfach seine Website mittels Git synchronisieren möchte. Tatsächlich sind die einzigen Dateien, die man selber anfassen muss:
 
 - die Markdown-Seiten in `quartz/content`
-- und die Konfigurationsdateien in `quartz/.config`
+- die Konfigurationsdateien `quartz/quartz.config.ts` und `quartz/quartz.layout.ts`
+- custom Components in `quartz/components`
+- custom Styles in `quartz/styles`
 
-*Zwei Ordner? Mehr nicht?* - Ja, mehr nicht. Der Rest ist Krams den Quartz zum bauen deiner Seite benötigt. Zum Aufräumen und lokalem Testen reicht es also, einen extra Ordner zu erstellen und dort einfach diese beiden Ordner zu kopieren. Ich habe dann ein eigenes Git-Repository erstellt, diese Ordner dort hinein verschoben und mittels **Symbolic Links**[^2] mit den Ordnern im eigentlichen Quartz-Ordner verknüpft.
+*Drei Ordner und zwei Dateien? Mehr nicht?* - Ja, mehr nicht. Der Rest ist Krams den Quartz zum bauen deiner Seite benötigt. Zum Aufräumen und lokalem Testen reicht es also, einen extra Ordner zu erstellen und dort einfach diese Ordner zu kopieren. Ich habe dann ein eigenes Git-Repository erstellt, diese Ordner dort hinein verschoben und mittels **Symbolic Links**[^2] mit den Ordnern im eigentlichen Quartz-Ordner verknüpft.
 
-### Mein Ordnersystem
+### Quartz Ordnersystem
 
 ```yml
 quartz
 	content     # Hier liegen die .md Dateien zum bauen
-	.config     # Hier liegen die entsprechenden Configs
+		...
+	quartz
+		components # Hier liegen zusätzliche Components
+			...
+		styles    # Hier liegen zusätzliche Styles
+			...
+	quartz.config.ts
+	quartz.layout.ts
 	...         # Weitere, uninteressante Dateien
-	repository  # Mein neuer Ordner, den ich auf Git synce
-		content # Verlinkung von quartz/content
-		.config # Verlinkung von quartz/.config
-		...     # Weitere Repository-Config-Dateien
 ```
 
-### Befehle zum Erstellen der Links
+### Mein Ordnersystem
+
+```yml
+repository  # Mein neuer Ordner, den ich auf Git synce
+	content # Verlinkung von quartz/content
+	.config # Enthält alle Config-Dateien
+		components
+		styles
+		quartz.config.ts
+		quartz.layout.ts
+```
+
+### Befehl zum Erstellen der Links
 
 ```sh
-ln -sf /path/to/repository/content .
+ln -sf /path/to/repository/content /path/to/quartz/content
 # Verlinkt den /repository/content Ordner mit einem content Ordner im aktuellen Pfad
 # -s : Symoblic Link
 # -f : Überschreibe einen eventuell existierenden content Ordner im aktuellen Pfad
-```
-
-```sh
-ln -sf /path/to/repository/.config .
 ```
 
 Nun lässt sich das Git-Repository auf eine Git-Platform wie GitHub pushen - et voilà - ein übersichtliches Repository!
