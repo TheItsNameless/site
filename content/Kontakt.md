@@ -1,6 +1,7 @@
 ---
 title: Kontaktformular
 tags: hidden
+comments: false
 ---
 
 Bitte nutze dieses Formular wenn du Fragen, Anregungen oder ähnliches hast. Ich freue mich, dir zu antworten!

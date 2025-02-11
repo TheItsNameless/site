@@ -2,6 +2,7 @@
 title: Datenschutz
 tags:
   - hidden
+comments: false
 ---
 
 # Datenschutzerklärung

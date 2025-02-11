@@ -1,6 +1,7 @@
 ---
 tags:
   - hidden
+comments: false
 ---
 
 Sofern nicht anders angegeben, unterliegen alle Inhalte dieser Seite der Lizenz 

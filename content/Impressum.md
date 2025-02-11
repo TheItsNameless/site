@@ -2,6 +2,7 @@
 title: Impressum
 tags:
   - hidden
+comments: false
 ---
 
 # Impressum
