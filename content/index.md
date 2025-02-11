@@ -2,6 +2,7 @@
 title: ItsNameless - Jetzt als Blog!
 tags:
   - Vorstellung
+date: 2025-01-29
 ---
 # Aktuelles
 
