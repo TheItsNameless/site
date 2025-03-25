@@ -41,7 +41,10 @@ export const sharedPageComponents: SharedLayout = {
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.Breadcrumbs(),
+    Component.ConditionalRender({
+      component: Component.Breadcrumbs(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
@@ -51,22 +54,14 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
+    Component.RecentNotes({ title: "Aktuelles", showTags: false }),
     Component.DesktopOnly(
-      Component.RecentNotes({
-        title: "Aktuelles",
-        showTags: false,
-        filter: (data) => {
-          return data.frontmatter?.tags?.includes("hidden") !== true
+      Component.Explorer({
+        filterFn: (node) => {
+          return node.data?.tags?.includes("hidden") !== true
         },
       }),
     ),
-      Component.DesktopOnly(
-        Component.Explorer({
-          filterFn: (node) => {
-            return node.file?.frontmatter?.tags?.includes("hidden") !== true
-          },
-        }),
-      ),
   ],
   right: [
     Component.Graph(),
@@ -86,7 +81,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.DesktopOnly(
       Component.Explorer({
         filterFn: (node) => {
-          return node.file?.frontmatter?.tags?.includes("hidden") !== true
+          return node.data?.tags?.includes("hidden") !== true
         },
       }),
     ),
