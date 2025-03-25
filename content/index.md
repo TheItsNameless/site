@@ -9,7 +9,8 @@ comments: false
 
 *Neues aus der Welt von ItsNameless!*
 
-[Blog aufsetzen leicht gemacht](<Blog aufsetzen leicht gemacht>)
+[[The Stash - Quick Fixes für Alles]]
+[[Blog aufsetzen leicht gemacht]]
 
 # Vorstellung
 
