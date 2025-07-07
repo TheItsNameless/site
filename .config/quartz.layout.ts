@@ -54,7 +54,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.RecentNotes({ title: "Aktuelles", showTags: false }),
+    Component.DesktopOnly(Component.RecentNotes({ title: "Aktuelles", showTags: false })),
     Component.DesktopOnly(
       Component.Explorer({
         filterFn: (node) => {
@@ -64,7 +64,7 @@ export const defaultContentPageLayout: PageLayout = {
     ),
   ],
   right: [
-    Component.Graph(),
+    Component.DesktopOnly(Component.Graph()),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.DesktopOnly(Component.Backlinks()),
   ],
@@ -88,3 +88,4 @@ export const defaultListPageLayout: PageLayout = {
   ],
   right: [],
 }
+
