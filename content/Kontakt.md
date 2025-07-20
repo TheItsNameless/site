@@ -1,7 +1,9 @@
 ---
 title: Kontaktformular
-tags: hidden
+tags:
+  - hidden
 comments: false
+date: 2025-01-29
 ---
 
 Bitte nutze dieses Formular wenn du Fragen, Anregungen oder ähnliches hast. Ich freue mich, dir zu antworten!

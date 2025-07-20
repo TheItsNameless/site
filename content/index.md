@@ -9,6 +9,7 @@ comments: false
 
 *Neues aus der Welt von ItsNameless!*
 
+[[Homer - Ein Dashboard für dein Server]]
 [[The Stash - Quick Fixes für Alles]]
 [[Blog aufsetzen leicht gemacht]]
 
@@ -43,15 +44,19 @@ Dieser Blog ist eine Art Knowlege-Sharing-Platform, auf der ich meinen Gedanken 
 
 ## Und wo gibt es mich *sonst* so?
 
-Mich gibt es nicht nur hier, sondern natürlich auch auf:
+Mich gibt es nicht nur hier, sondern natürlich auch auf GitHub, Reddit...
 
-- [GitHub](https://github.com/theitsnameless)
-- [Reddit](https://www.reddit.com/user/ItsNameless8676/)
-- [Discord](https://discord.com/invite/rP9Qke2jDs)
+Schau einfach mal auf meiner Social-Seite nach:
+
+**[ItsNameless - Social](https://social.itsnameless.de/)**
 
 ## Was ist die Beste Programmiersprache?
 
 [DreamBerd](https://github.com/TodePond/DreamBerd)![^2]
+
+> Update vom 11. Februar 2025: Nach Donald Trumps Executive Order wurde die Programmiersprache umbenannt, jetzt heißt Sie:
+
+[Gulf of Mexico](https://github.com/TodePond/GulfOfMexico)
 
 ## Kannst du mir diese Website programmieren?
 

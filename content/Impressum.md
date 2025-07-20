@@ -3,6 +3,7 @@ title: Impressum
 tags:
   - hidden
 comments: false
+date: 2025-01-29
 ---
 
 # Impressum

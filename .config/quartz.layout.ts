@@ -27,13 +27,12 @@ export const sharedPageComponents: SharedLayout = {
   ],
   footer: Component.Footer({
     links: {
-      Impressum: "/Impressum",
-      Datenschutz: "/Datenschutz",
+      Social: "https://social.itsnameless.de/",
+      Quellcode: "https://github.com/theitsnameless/site",
       Kontakt: "/Kontakt",
       Lizenz: "/Lizenz",
-      Quellcode: "https://github.com/theitsnameless/site",
-      GitHub: "https://github.com/theitsnameless",
-      Reddit: "https://www.reddit.com/user/ItsNameless8676/",
+      Datenschutz: "/Datenschutz",
+      Impressum: "/Impressum",
     },
   }),
 }
@@ -54,7 +53,13 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.RecentNotes({ title: "Aktuelles", showTags: false })),
+    Component.DesktopOnly(
+      Component.RecentNotes({
+        title: "Aktuelles",
+        showTags: false,
+        filter: (node) => node.data?.tags?.includes("hidden") !== true,
+      }),
+    ),
     Component.DesktopOnly(
       Component.Explorer({
         filterFn: (node) => {
