@@ -9,11 +9,11 @@ services:
             - "8080:8080"
         volumes:
             # Mount local content directory to quartz content directory
-            - ./content:/quartz/content
+            - ../content:/quartz/content
             # Mount individual config files to preserve existing quartz files
-            - ./.config/quartz.config.ts:/quartz/quartz.config.ts
-            - ./.config/quartz.layout.ts:/quartz/quartz.layout.ts
-            - ./.config/quartz/components/Footer.tsx:/quartz/quartz/components/Footer.tsx
-            - ./.config/quartz/styles/custom.scss:/quartz/quartz/styles/custom.scss
+            - ../.config/quartz.config.ts:/quartz/quartz.config.ts
+            - ../.config/quartz.layout.ts:/quartz/quartz.layout.ts
+            - ../.config/quartz/components/Footer.tsx:/quartz/quartz/components/Footer.tsx
+            - ../.config/quartz/styles/custom.scss:/quartz/quartz/styles/custom.scss
         command: npx quartz build --serve
         working_dir: /quartz
