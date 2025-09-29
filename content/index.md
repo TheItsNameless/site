@@ -9,6 +9,7 @@ comments: false
 
 *Neues aus der Welt von ItsNameless!*
 
+[[Private Registries in n8n - Nur Besser]]
 [[Homer - Ein Dashboard für dein Server]]
 [[The Stash - Quick Fixes für Alles]]
 [[Blog aufsetzen leicht gemacht]]

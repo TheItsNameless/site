@@ -1,29 +1,35 @@
 ---
-Title: Private Registries in n8n
+Title: Private Registries in n8n - Nur Besser
 tags:
-  - how-to
-  - server
-  - "#automation"
+    - how-to
+    - server
+    - automation
+    - n8n
 date: 2025-08-24
 ---
+
 Nicht selten kommt es vor, dass man Prozesse ständig wiederholt. Ob alte E-Mails löschen, sich seine Werbemails zusammenfassen zu lassen, oder vieles weitere. Das alles lässt sich einfach automatisieren. Ein bekanntes Tool ist [n8n](https://n8n.io/), welches eine Vielzahl von integrierten und Community-Nodes hat. Doch manche Use-Cases sind einfach zu speziell und benötigen eigene Nodes.
 
 # n8n-Customization leicht gemacht - Community Nodes
+
 ## Der offizielle Weg
 
 [Community Nodes](https://docs.n8n.io/integrations/community-nodes/installation/) sind eine Möglichkeit, mit Typescript einfach eigene Nodes zu erstellen und so die Funktionalität von n8n zu erweitern. Um eigene Nodes zu publishen bietet n8n einen [Guide](https://docs.n8n.io/integrations/community-nodes/build-community-nodes). Dieser bietet zwei Möglichkeiten, Custom n8n-Nodes zu installieren:
-- auf npm[^1] veröffentlichen und approven lassen
-- in das Docker-Image kopieren und bauen
+
+-   auf npm[^1] veröffentlichen und approven lassen
+-   in das Docker-Image kopieren und bauen
 
 ## Die Nachteile der offiziellen Wege
 
 Beide Möglichkeiten sind eher beschränkt nützlich für private Nodes, da diese:
-- eine Veröffentlichung erfordern oder
-- das Image ständig automatisiert neu gebaut werden muss
+
+-   eine Veröffentlichung erfordern oder
+-   das Image ständig automatisiert neu gebaut werden muss
 
 Wie gut, dass wir uns mit npm auskennen!
 
 # Die Lösung - n8n-Nodes aus privaten Quellen
+
 ## Was sind Private Registries?
 
 Neben npm gibt es noch andere Registries, zum Beispiel die [GitHub npm Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry). Diese erlaubt das Veröffentlichen privater Pakete. Wie das funktioniert, ist in der [offiziellen Dokumentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#publishing-a-package-using-a-local-npmrc-file) zu finden, doch das soll hier keine Rolle spielen. Haben wir aber dann unsere Pakete veröffentlicht, wollen wir diese nun in n8n installieren können, und zwar ganz einfach über das Frontend.
@@ -37,6 +43,7 @@ npm nutzt die [.npmrc-Datei](https://docs.npmjs.com/cli/v9/configuring-npm/npmrc
 Genau an diesem Ort kann jetzt also eine `.npmrc`-Datei mit einer Referenz und einem Access-Key auf die Private Registry abgelegt werden. Im Fall einer privaten GitHub Registry sieht das wie folgt aus:
 
 _.npmrc:_
+
 ```npmrc
 @theitsnameless:registry=https://npm.pkg.github.com/
 //npm.pkg.github.com/:_authToken=<github-personal-access-token>
